@@ -23,7 +23,7 @@ def infer():
     if not data or "features" not in data:
         return jsonify({"error": "Missing 'features' field"}), 400
 
-    features = np.array(data["features"], dtype=np.float32)
+    features = np.array(data["features"], dtype=np.float32).reshape(1,-1)
     interpreter.set_tensor(input_details[0]['index'], features)
     interpreter.invoke()
     output = interpreter.get_tensor(output_details[0]['index'])
