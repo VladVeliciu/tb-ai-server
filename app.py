@@ -39,7 +39,7 @@ def infer():
     except Exception as e:
         print("Failed to send to ThingsBoard:", e)
 
-    return jsonify({"ai_result": result})
+    return jsonify({"classification_result": result})
 
 if __name__ == "__main__":
     import os
