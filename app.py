@@ -27,7 +27,7 @@ def infer():
     interpreter.set_tensor(input_details[0]['index'], features)
     interpreter.invoke()
     output = interpreter.get_tensor(output_details[0]['index'])
-    result = np.argmax(output)
+    result = (float)np.argmax(output)
 
     # Send result to ThingsBoard
     try:
