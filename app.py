@@ -33,13 +33,13 @@ def infer():
     try:
         requests.post(
             f"{TB_URL}/api/v1/{TB_TOKEN}/attributes",
-            json={"classification_result": result},
+            json={"Classification Result": result},
             timeout=3
         )
     except Exception as e:
         print("Failed to send to ThingsBoard:", e)
 
-    return jsonify({"classification_result": result})
+    return jsonify({"Classification Result": result})
 
 if __name__ == "__main__":
     import os
