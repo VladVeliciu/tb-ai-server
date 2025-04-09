@@ -32,8 +32,8 @@ def infer():
     # Send result to ThingsBoard
     try:
         requests.post(
-            f"{TB_URL}/api/v1/{TB_TOKEN}/telemetry",
-            json={"ai_result": result},
+            f"{TB_URL}/api/v1/{TB_TOKEN}/attributes",
+            json={"classification_result": result},
             timeout=3
         )
     except Exception as e:
